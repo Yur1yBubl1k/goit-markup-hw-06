@@ -19,7 +19,8 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul, 
+label {
   margin: 0;
   padding: 0;
 }
@@ -463,16 +464,18 @@ html {
   pointer-events: none;
 }  
 
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+ padding: 24px;
   width: 408px;
   /* height: 584px; */
   height: auto;
   background-color: #fcfcfc;
+border-radius: 4px;
 }
 
 .modal-but {
@@ -482,10 +485,13 @@ html {
   cursor: pointer;
 
   background-color: #e7e9fc;
+  
+  /* background: #E7E9FC; */
+border: 1px solid rgba(0, 0, 0, 0.1);
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  border-style: none;
+  /* border-style: none; */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-but:is(:hover, :focus) {
@@ -506,8 +512,8 @@ html {
 }
 
 .modal-title {
-  padding-top: 72px;
-  margin-bottom: 6px;
+  padding-top: 48px;
+  margin-bottom: 16px;
   /* margin-right: 24px;
  margin-left: 24px; */
   font-weight: 500;
@@ -524,9 +530,9 @@ html {
  
   margin-right: auto;
   margin-left: auto;
-   padding-left: 24px;
+   /* padding-left: 24px;
   padding-right: 24px;
-   padding-bottom: 24px; 
+   padding-bottom: 24px;  */
 }
 .input-text {
 display: inline-block;
@@ -576,18 +582,14 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
 
-/* .modal-but:is(:hover, :focus) {
-  background-color: #404bbf;
+.modal-input:focus + .modal-icon {
+border-color:var(--button-color);
+fill: var(--button-color);
 }
-.modal-but:is(:hover, :focus) .modal-svg {
-  fill: #ffffff;
-} */
-.modal-input:focus, :hover {
+ 
+.modal-comment:hover, .modal-comment:focus {
 border-color: var(--button-color);
 }
- /* .input-wrap:is(:hover, :focus) .modal-icon {
-  fill: var(--button-color);
- }  */
 
 
 .modal-icon {
@@ -612,9 +614,7 @@ transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-comment:hover, :focus {
-border-color: var(--button-color);
-}
+
 
 .modal-comment::placeholder {
   /* padding-top: 8px;
@@ -629,11 +629,29 @@ color: rgba(117, 117, 117, 0.5);
 }
 
 .label-checkbox {
-margin-top: 32px;
+  
+margin-top: 16px;
 margin-bottom: 24px;
 }
-
+.check-text::before {
+  display: flex;
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid black;
+  border-radius: 2px;
+  
+}
+.input-check:checked + .check-text::before{
+background-color: var(--button-color) ;
+border: none;
+background-image: url(../images/Vector\ \(1\).svg);
+background-repeat: no-repeat;
+background-position: center;
+}
 .check-text {
+  display: flex;
+  gap: 8px;
   font-weight: 400;
 font-size: 12px;
 line-height: 1.33;
