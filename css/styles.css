@@ -459,10 +459,10 @@ html {
   background-color: rgba(46, 47, 66, 0.4);
 }
 
- /* .backdrop.is-hidden {
+ .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-}   */
+}  
 
 
 .modal {
